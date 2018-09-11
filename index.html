@@ -13,8 +13,12 @@
     <script>
         let myChart = document.getElementById('myChart').getContext('2d');
 
+        Chart.defaults.global.defaultFontFamily = 'fantasy' ; 
+        Chart.defaults.global.defaultFontSize = 14 ; 
+
+
         let massPopChart = new Chart(myChart , {
-            type: 'pie' , // Types - Bar / HorizontalBar / Donut / Pie / Radar / Line
+            type: 'bar' , // Types - Bar / HorizontalBar / Donut / Pie / Radar / Line
             data: {
                 labels: ["Toronto", "Montreal", "Vancouver" , "Calgary"],
                 datasets: [{
@@ -24,9 +28,46 @@
                         1700000,
                         648000,
                         1270000
-                    ]
+                    ],
+                    backgroundColor: [
+                        'green',
+                        'red',
+                        'blue',
+                        'yellow'
+                    ],
+                    borderWidth : 4,
+                    borderColor : 'white',
+                    hoverBorderWidth : 3,
+                    hoverBorderColor : "black"
                 }]
-            }
+            },
+
+                options:{
+                    title: {
+                        display:true,
+                        text: "Largest Cities In Canada",
+                        fontSize : 30
+                    },
+                    legend : {
+                        labels:{
+                            fontColor: "green",
+                        }
+                        
+                    },
+                    layout  : {
+                        padding:{
+                            left:50,
+                            top:100,
+                            right: 0,
+                            bottom: 0
+
+                        }
+                        
+                    },
+                    tooltips:{
+                            enabled: true
+                        }
+                }
         })
     </script>
 </body>
