@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">    
+    <title>CharJS</title>
+</head>
+<body>
+    <canvas id="myChart"></canvas>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        let massPopChart = new Chart(myChart , {
+            type: 'pie' , // Types - Bar / HorizontalBar / Donut / Pie / Radar / Line
+            data: {
+                labels: ["Toronto", "Montreal", "Vancouver" , "Calgary"],
+                datasets: [{
+                    label: "Population",
+                    data : [
+                        2800000,
+                        1700000,
+                        648000,
+                        1270000
+                    ]
+                }]
+            }
+        })
+    </script>
+</body>
+</html>
